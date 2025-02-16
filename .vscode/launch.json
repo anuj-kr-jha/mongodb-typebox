@@ -1,0 +1,49 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    // NODE
+    {
+      "name": "Attach to node",
+      "port": 9230,
+      "request": "attach",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch using node",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/src/main.ts",
+      "runtimeArgs": ["--import=tsx", "--watch", "--env-file=.env", "--disable-proto=throw"],
+      "runtimeExecutable": "/home/evil/.local/share/fnm/node-versions/v23.5.0/installation/bin/node"
+    },
+    // Bun
+    {
+      "type": "bun",
+      "request": "launch",
+      "name": "Launch using bun",
+      "program": "src/main.ts",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "RUNTIME": "bun"
+      },
+      "strictEnv": false,
+      "watchMode": true,
+      "stopOnEntry": false,
+      "noDebug": false,
+      "runtime": "bun",
+      "runtimeArgs": ["--watch", "--inspect=6499"]
+    },
+    {
+      "type": "bun",
+      "request": "attach",
+      "name": "Attach to Bun",
+      "url": "ws://localhost:9230/_token_"
+    }
+  ]
+}

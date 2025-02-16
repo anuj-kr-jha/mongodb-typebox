@@ -1,0 +1,9 @@
+src/
+test/
+tsconfig*.json
+.github/
+.husky/
+.vscode/
+.zed/
+.env*
+*.log

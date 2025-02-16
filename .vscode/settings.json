@@ -1,0 +1,65 @@
+{
+  /* import module specifier */
+  "javascript.preferences.importModuleSpecifierEnding": "auto",
+  "typescript.preferences.importModuleSpecifierEnding": "auto",
+  "typescript.preferences.importModuleSpecifier": "relative",
+
+  /* code indent */
+  "editor.tabSize": 2,
+  "editor.indentSize": "tabSize",
+
+  /* formatter */
+  "javascript.format.enable": true,
+  "typescript.format.enable": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "biomejs.biome",
+
+  /* formatter for specific language */
+  "[javascript]": { "editor.defaultFormatter": "biomejs.biome" },
+  "[typescript]": { "editor.defaultFormatter": "biomejs.biome" },
+  "[json]": { "editor.defaultFormatter": "biomejs.biome" },
+  "[jsonc]": { "editor.defaultFormatter": "biomejs.biome" },
+
+  /* code action on save */
+  "editor.codeActionsOnSave": {
+    "quickfix.biome": "never" /* autofix on save. enableing it takes longer */,
+    "source.organizeImports.biome": "explicit" /* auto sort imports on save */
+  },
+
+  /* bun spicific */
+  "bun.debugTerminal.enabled": true,
+  "bun.debugTerminal.stopOnEntry": false,
+
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/.ruby-lsp": true
+  },
+
+  "explorerExclude.backup": {},
+
+  "cSpell.words": [
+    "ARRAPPEND",
+    "ARRINDEX",
+    "ARRLEN",
+    "biomejs",
+    "bzubbe",
+    "cashout",
+    "nosniff",
+    "NUMINCRBY",
+    "OBJKEYS",
+    "OBJLEN",
+    "oneline",
+    "SAMEORIGIN",
+    "STRAPPEND",
+    "typebox",
+    "Wbsocketjs"
+  ],
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  }
+}
