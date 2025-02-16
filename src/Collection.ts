@@ -31,12 +31,7 @@ import { validate } from 'typebox-utils';
 
 interface IndexDefinition {
   keys: Record<string, 1 | -1>; // 1 for ascending, -1 for descending
-  options?: {
-    unique?: boolean;
-    sparse?: boolean;
-    background?: boolean;
-    name?: string;
-  };
+  options?: CreateIndexesOptions;
 }
 
 export interface CollectionOptions {
@@ -184,5 +179,13 @@ export class Collection<T extends Document> {
 
   async listIndexes(options?: ListIndexesOptions) {
     return this.collection.listIndexes(options);
+  }
+
+  /**
+   * @internal
+   * @returns The raw MongoDB collection
+   */
+  get rawCollection() {
+    return this.collection;
   }
 }
