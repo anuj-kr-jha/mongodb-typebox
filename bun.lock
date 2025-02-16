@@ -8,6 +8,7 @@
         "@types/node": "^22.13.4",
         "husky": "^9.1.7",
         "tsx": "^4.19.2",
+        "typescript": "^5.7.3",
       },
       "peerDependencies": {
         "@sinclair/typebox": "^0.34.11",
@@ -120,6 +121,8 @@
     "tsx": ["tsx@4.19.2", "", { "dependencies": { "esbuild": "~0.23.0", "get-tsconfig": "^4.7.5" }, "optionalDependencies": { "fsevents": "~2.3.3" }, "bin": { "tsx": "dist/cli.mjs" } }, "sha512-pOUl6Vo2LUq/bSa8S5q7b91cgNSjctn9ugq/+Mvow99qW6x/UZYwzxy/3NmqoT66eHYfCVvFvACC58UBPFf28g=="],
 
     "typebox-utils": ["typebox-utils@0.1.7", "", { "peerDependencies": { "@sinclair/typebox": "^0.34.11", "mongodb": "^6.13.0" } }, "sha512-7GIsCnuXXXEUN9CGctjXeybrSWkXY83rHNICm1vLMke4qB9NJkCkXDAtk6+UekOWJK91mIGNTXv98JGtMfOX0g=="],
+
+    "typescript": ["typescript@5.7.3", "", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw=="],
 
     "undici-types": ["undici-types@6.20.0", "", {}, "sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg=="],
 
