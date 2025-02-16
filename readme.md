@@ -7,7 +7,7 @@ A mongodb client with TypeBox validation on Insert/InsertMany operations. It als
 ```bash
 npm install mongodb-typebox
 ```
-Note: This package is a peer dependency of `@sinclair/typebox` and `mongodb`. so you need to install them separately.
+Note: This package is a peer dependency of `@sinclair/typebox`, `typebox-utils`and `mongodb`. so you need to install them separately.
 
 ## Usage
 
@@ -119,6 +119,7 @@ main().catch(console.error);
 ## Peer Dependencies
 
 - [`@sinclair/typebox`](https://www.npmjs.com/package/@sinclair/typebox): Core validation library
+- [`typebox-utils`](https://www.npmjs.com/package/typebox-utils): TypeBox utilities
 - [`mongodb`](https://www.npmjs.com/package/mongodb): MongoDB driver
 
 ## License
@@ -126,5 +127,3 @@ main().catch(console.error);
 MIT © [Anuj Kumar Jha](https://github.com/anuj-kr-jha)
 
 ## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
