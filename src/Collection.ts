@@ -79,11 +79,11 @@ export class Collection<T extends Document> {
     return this.collection.insertMany(validatedDocs as typeof docs, options);
   }
 
-  async findOne(filter: Filter<T>, options?: FindOptions & Abortable) {
+  async findOne(filter: Filter<T>, options?: FindOptions<T> & Abortable): Promise<T | null> {
     return this.collection.findOne(filter, options);
   }
 
-  async find(filter: Filter<T>, options?: FindOptions & Abortable) {
+  async find(filter: Filter<T>, options?: FindOptions<T> & Abortable) {
     return this.collection.find(filter, options);
   }
 
