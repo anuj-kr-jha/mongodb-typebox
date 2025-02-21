@@ -1,6 +1,6 @@
 {
   "name": "mongodb-typebox",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A MongoDB client with TypeBox validation on Insert/InsertMany operations. It also provide Easy to use collection Interface",
   "module": "./dist/esm/index.js",
   "type": "module",

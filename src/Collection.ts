@@ -40,9 +40,11 @@ export interface CollectionOptions {
 }
 
 export class Collection<T extends Document> {
+  /** typebox pre-compiled schema that can be used to validate data */
+  public _schema: TObject;
+
   private collection: MongoCollection<T>;
   private indexes: IndexDefinition[];
-  private schema: TObject;
   // @ts-ignore
   private collectionName: string;
 
@@ -50,7 +52,7 @@ export class Collection<T extends Document> {
     this.collection = collection;
     this.collectionName = collectionName;
     this.indexes = options.indexes || [];
-    this.schema = options.schema;
+    this._schema = options.schema;
     this.createIndexes();
   }
 
@@ -62,7 +64,7 @@ export class Collection<T extends Document> {
 
   #validateDocument(doc: OptionalUnlessRequiredId<T> | Partial<T>, applyDefaults = false) {
     const skipOperators = applyDefaults ? ['Convert'] : ['Convert', 'Default'];
-    const [error, updatedDoc] = validate(doc, this.schema, true, skipOperators as any);
+    const [error, updatedDoc] = validate(doc, this._schema, true, skipOperators as any);
     if (error) {
       throw new Error(`Validation failed: ${error}`);
     }
