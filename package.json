@@ -6,21 +6,21 @@
   "type": "module",
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@types/node": "^22.13.4",
+    "@types/node": "^22.15.30",
     "husky": "^9.1.7",
-    "tsx": "^4.19.2",
-    "typescript": "^5.7.3"
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
   },
   "peerDependencies": {
-    "mongodb": "^6.13.0",
-    "@sinclair/typebox": "^0.34.11",
-    "typebox-utils": "^0.1.7"
+    "mongodb": "^6.17.0",
+    "@sinclair/typebox": "^0.34.33",
+    "typebox-utils": "^0.2.0"
   },
   "dependencies": {},
   "scripts": {
     "prepare": "husky",
-    "watch": "node --import=tsx --watch --env-file=.env --disable-proto=throw src/main.ts",
-    "debug": "node --import=tsx --watch --inspect=9230 --env-file=.env --disable-proto=throw src/main.ts",
+    "watch": "node --import=tsx --watch --disable-proto=throw src/main.ts",
+    "debug": "node --import=tsx --watch --inspect=9230 --disable-proto=throw src/main.ts",
     "fmt:apply": "bunx @biomejs/biome format --write src",
     "build": "npm run build:esm && npm run build:cjs",
     "build:esm": "tsc -p tsconfig.esm.json",

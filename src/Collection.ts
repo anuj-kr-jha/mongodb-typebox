@@ -27,7 +27,7 @@ import type {
   UpdateOptions
 } from 'mongodb';
 import type { TObject } from 'typebox-utils';
-import { validate } from 'typebox-utils';
+import { Decode } from 'typebox-utils';
 
 interface IndexDefinition {
   keys: Record<string, 1 | -1>; // 1 for ascending, -1 for descending
@@ -63,8 +63,7 @@ export class Collection<T extends Document> {
   }
 
   #validateDocument(doc: OptionalUnlessRequiredId<T> | Partial<T>, applyDefaults = false) {
-    const skipOperators = applyDefaults ? ['Convert'] : ['Convert', 'Default'];
-    const [error, updatedDoc] = validate(doc, this._schema, true, skipOperators as any);
+    const [error, updatedDoc] = Decode(doc, this._schema, applyDefaults);
     if (error) {
       throw new Error(`Validation failed: ${error}`);
     }
