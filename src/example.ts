@@ -1,5 +1,5 @@
 import { ObjectId } from 'mongodb';
-import { type Static, TObjectId, Type, Utils } from 'typebox-utils';
+import { type Static, Type, Utils } from 'typebox-utils';
 import { Database } from './index';
 
 // Connect to MongoDB with auth
@@ -10,17 +10,17 @@ export async function example() {
 
   // Define your schema with ObjectId
   const UserSchema = Type.Object(
-      {
-        _id: Type.Optional(Utils.ObjectId()) as unknown as  TObjectId,
-        name: Type.String(),
-        age: Type.Number(),
-        email: Type.String({ format: 'email' }),
-        createdAt: Type.Optional(Type.Date({ default: new Date() })),
-        updatedAt: Type.Optional(Type.Date({ default: new Date() })),
-        x: Type.Optional(Type.Object({ a: Type.String() }, { default: { a: 'b' } }))
-      },
-      { additionalProperties: false }
-    );
+    {
+      _id: Type.Optional(Utils.ObjectId()),
+      name: Type.String(),
+      age: Type.Number(),
+      email: Type.String({ format: 'email' }),
+      createdAt: Type.Optional(Type.Date({ default: new Date() })),
+      updatedAt: Type.Optional(Type.Date({ default: new Date() })),
+      x: Type.Optional(Type.Object({ a: Type.String() }, { default: { a: 'b' } }))
+    },
+    { additionalProperties: false }
+  );
 
   type User = Static<typeof UserSchema>;
 
@@ -45,7 +45,7 @@ export async function example() {
     _id: _id,
     name: 'John Doe',
     age: 30,
-    email: 'john@example.com',
+    email: 'john@example.com'
   } satisfies User;
   // Insert a document - this will be validated
   // const result = await userCollection.insertMany([user, user].map(u => ({ ...u, _id: new ObjectId() })));
