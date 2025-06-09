@@ -14,7 +14,7 @@
   "peerDependencies": {
     "mongodb": "^6.17.0",
     "@sinclair/typebox": "^0.34.33",
-    "typebox-utils": "^0.2.1"
+    "typebox-utils": "^0.2.2"
   },
   "dependencies": {},
   "scripts": {
